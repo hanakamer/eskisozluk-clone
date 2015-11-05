@@ -19,6 +19,7 @@ var EntryForm = React.createClass({
       url: "http://127.0.0.1:8000/submit_entry/",
       data:data,
       success: function(data){
+        console.log(data.id)
         window.location="http://localhost:8080/#/title/"+data.id;
       }
     })
@@ -29,7 +30,7 @@ var EntryForm = React.createClass({
   },
   render :function(){
     return (
-    <div>
+    <div className='header'>
         <form className="input-area" onSubmit={this.handleSubmit}>
           <input placeholder="baslik, #entry ya da @yazar" ref='title' />
           <textarea className="entry-textarea" cols="50" rows="3" placeholder="entry icerigi" ref='entry' />
