@@ -17,7 +17,7 @@ class Title(models.Model):
 
 
 class Entry(models.Model):
-    title = models.ForeignKey('Title')
+    title = models.ForeignKey('Title', related_name='entries')
     pub_date_entry = models.DateTimeField("date published", null=True)
     entry_text = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
