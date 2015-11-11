@@ -17,6 +17,13 @@ command in the Views directory where webpack.config file is placed.
 
 On the other hand you will need to run the server where Django app lives.
 
+Python 3 is the required version for this app so you should create your virtual enviroment specifying the Python version by running:
+
+```
+virtualenv -p /usr/bin/python3.4 <path/to/new/virtualenv/>
+```
+command.
+
 After creating a virtual enviroment you should install the required packages specified in requirements.txt running:
 ```
 pip install -r /path/to/requirements.txt
