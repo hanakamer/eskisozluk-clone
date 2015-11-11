@@ -39,8 +39,8 @@ module.exports =  React.createClass({
       url: "http://127.0.0.1:8000/titles/",
       success: function(data){
         this.setState({
-          titles:data.results,
-          entryNum:data.num_of_entries,
+          titles:data,
+          entryNum:data,
         });
       }.bind(this),
     })

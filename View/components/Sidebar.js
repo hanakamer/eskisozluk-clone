@@ -5,13 +5,12 @@ var Sidebar = React.createClass({
   render : function () {
     return <div className='titles'>
         {this.props.data.map(function(title){
-          // console.log(this.props.count[title.fields.title_text]);
           return (
             <Title
-              text={title.fields.title_text}
-              id={title.pk}
-              key={title.pk}
-              count={this.props.count[title.fields.title_text]}>
+              text={title.title_text}
+              id={title.id}
+              key={title.id}
+              count={title.entries__count}>
               </Title>
           )
         }.bind(this)

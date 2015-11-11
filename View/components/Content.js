@@ -22,24 +22,26 @@ var Content = React.createClass({
       dataType:"json",
       url:"http://127.0.0.1:8000/title/"+titleId,
       success: function(data){
-        console.log(data)
         this.setState({
           currentTitle:data.entries,
-          currentTitleText:data.title,
+          currentTitleText:data,
         });
       }.bind(this),
     })
   },
   render : function(){
+    // console.log(this.state.currentTitleText.title_text);
     return (
 
       <div className='entries' >
-        {this.state.currentTitleText.map(function(title){
-          return <EntryTitle  text={title.title_text} key={title.id} />
-        })}
-        {this.state.currentTitle.map(function(entry){
-          return <Entry text={entry.entry_text} key={entry.id}/>
-        })}
+      {console.log(this.state.currentTitleText)}
+      {console.log(this.state.currentTitle)}
+
+      <EntryTitle  text={this.state.currentTitleText.title_text} key={this.state.currentTitleText.id} />
+
+      {this.state.currentTitle.map(function(entry){
+        return <Entry text={entry.entry_text} key={entry.id}/>
+      })}
       </div>
     );
   }
