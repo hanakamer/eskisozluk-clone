@@ -12,7 +12,7 @@ def date_handler(obj):
     return obj.isoformat() if hasattr(obj, 'isoformat') else obj
 
 def make_serializable(iterable):
-    return [{str(k): v for k, v in item.iteritems()} for item in iterable]
+    return [{str(k): v for k, v in item.items()} for item in iterable]
 
 def all_titles(request):
     titles =  Title.objects.with_entry_counts().values()
